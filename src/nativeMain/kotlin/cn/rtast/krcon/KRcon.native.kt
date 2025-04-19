@@ -30,7 +30,7 @@ public actual class KRcon actual constructor(host: String, port: Int, password: 
         byteArray[offset++] = (request.type shr 8).toByte()
         byteArray[offset++] = request.type.toByte()
         for (i in request.body.indices) {
-            byteArray[offset++] = request.body[i].toByte()
+            byteArray[offset++] = request.body[i].code.toByte()
         }
         return byteArray
     }
